@@ -13,6 +13,6 @@ public class CrawlerApp  {
 //        photoCrawler.downloadPhotoExamples();
 //        photoCrawler.downloadPhotosForQuery(TOPICS.get(0));
         photoCrawler.downloadPhotosForMultipleQueries(TOPICS);
-        Thread.sleep(100000);
+        Thread.sleep(100_000);
     }
 }

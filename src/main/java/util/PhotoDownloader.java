@@ -32,7 +32,11 @@ public class PhotoDownloader {
     }
 
     public Observable<Photo> searchForPhotos(List<String> searchQueries) throws IOException {
-        return Observable.fromIterable(searchQueries).flatMap(a -> searchForPhotos(a).subscribeOn(Schedulers.io())).mergeWith(Observable.empty());
+        return Observable.fromIterable(searchQueries)
+                .flatMap(a -> searchForPhotos(a)
+                        .subscribeOn(Schedulers.io()
+                        ))
+                .mergeWith(Observable.empty());
     }
 
     public Observable<Photo> searchForPhotos(String searchQuery) throws IOException {
